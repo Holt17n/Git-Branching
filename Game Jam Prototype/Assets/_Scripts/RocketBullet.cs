@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketBullet : MonoBehaviour
 {
-    private float moveSpeed = 21f;
+    private float moveSpeed = 14f;
     public GameObject bullet;
 
     // Start is called before the first frame update
