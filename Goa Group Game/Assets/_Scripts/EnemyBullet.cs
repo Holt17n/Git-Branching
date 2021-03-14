@@ -7,7 +7,7 @@ public class EnemyBullet : MonoBehaviour
 {
     public float moveSpeed;
     public GameObject bullet;
-    
+    private GameObject[] currentLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,20 @@ public class EnemyBullet : MonoBehaviour
         }
         else if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("LevelOne");
-            Destroy(bullet);
+            currentLevel = GameObject.FindGameObjectsWithTag("CurrentLevel");
+            if (currentLevel[0].name == "Level1")
+            {
+                SceneManager.LoadScene("LevelOne");
+            }
+            if (currentLevel[0].name == "Level2")
+                {
+                    SceneManager.LoadScene("LevelTwo");
+                }
+            if (currentLevel[0].name == "Level3" )
+            {
+                SceneManager.LoadScene("LevelThree");
+            }
+            
         }
         else
         {
